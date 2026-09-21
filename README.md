@@ -49,34 +49,90 @@ Display all edge-detected images for comparison.
 
 ## Developed By
 
-- **Name:** ____________________________  
-- **Register No:** ______________________  
+- **Name:** MANIKANDAN K
+- **Register No:** 212224230150
 
 ---
 
 ## Output
 
 ###  Sobel Edge Detector
-- Detects edges in horizontal and vertical directions  
-- Produces gradient-based edge map  
+```python
+import cv2
+import numpy as np
+import matplotlib.pyplot as plt
+
+image = cv2.imread('spi.jpg') 
+gray_image = cv2.cvtColor(image, cv2.COLOR_BGR2GRAY)
+
+plt.imshow(cv2.cvtColor(image, cv2.COLOR_BGR2RGB))
+plt.title('Original Image')
+plt.axis('off')
+```
+<img width="516" height="289" alt="download" src="https://github.com/user-attachments/assets/a6bab015-b327-48b9-a7fc-3c2e77a0b5b1" />
+<img width="516" height="289" alt="download" src="https://github.com/user-attachments/assets/e538e7c8-49bf-4984-bab6-7fbabc545b3c" />
+
 
 ###  Prewitt Edge Detector
-- Similar to Sobel but simpler kernel  
-- Detects directional edges  
+```python
+sobel_x = cv2.Sobel(gray_image, cv2.CV_64F, 1, 0, ksize=5)  
+sobel_y = cv2.Sobel(gray_image, cv2.CV_64F, 0, 1, ksize=5)  
+sobel_combined = cv2.magnitude(sobel_x, sobel_y)  
+plt.imshow(sobel_combined, cmap='gray')
+plt.title('Sobel Edge Detection')
+plt.axis('off')
+```
+<img width="516" height="289" alt="download" src="https://github.com/user-attachments/assets/52a46b98-d740-468c-a652-e0e530452809" />
+
+
 
 ###  Roberts Edge Detector
-- Detects edges using diagonal gradients  
-- Sensitive to noise  
+```python
+Laplacian = cv2.Laplacian(gray_image, cv2.CV_64F)
+plt.imshow(laplacian, cmap='gray')
+plt.title('Laplacian Edge Detection')
+plt.axis('off')
+```
+<img width="516" height="289" alt="download" src="https://github.com/user-attachments/assets/7a9de37f-8411-49f9-8b98-1e5e8e4b82fc" />
+
+ 
 
 ###  Laplacian Edge Detector
-- Detects edges using second-order derivatives  
-- Highlights rapid intensity changes  
+```python
+Canny_edges = cv2.Canny(gray_image, 50, 150)
+plt.imshow(canny_edges, cmap='gray')
+plt.title('Canny Edge Detection')
+plt.axis('off')
+```
+<img width="516" height="289" alt="download" src="https://github.com/user-attachments/assets/3f5ff49f-c329-4ff2-aa6f-b8c3417f36f4" />
+
+
 
 ###  Canny Edge Detector
-- Multi-stage edge detection  
-- Produces clean and thin edges  
+```python
+image = cv2.imread("spi.jpg")
 
----
+gray = cv2.cvtColor(image, cv2.COLOR_BGR2GRAY)
+prewitt_x = np.array([[1, 0, -1],
+                      [1, 0, -1],
+                      [1, 0, -1]])
+
+prewitt_y = np.array([[1, 1, 1],
+                      [0, 0, 0],
+                      [-1, -1, -1]])
+
+prewitt_x_edge = cv2.filter2D(gray, -1, prewitt_x)
+prewitt_y_edge = cv2.filter2D(gray, -1, prewitt_y)
+prewitt = cv2.magnitude(prewitt_x_edge.astype(np.float32),
+                        prewitt_y_edge.astype(np.float32))
+
+plt.imshow(canny_edges, cmap='gray')
+plt.title('Prewitt Edge Detection')
+plt.axis('off')
+```
+<img width="516" height="289" alt="download" src="https://github.com/user-attachments/assets/b2679d59-6b73-4a98-bd09-2f1625d259e6" />
+
+
 
 ## Result
 
