@@ -93,7 +93,7 @@ plt.imshow(laplacian, cmap='gray')
 plt.title('Laplacian Edge Detection')
 plt.axis('off')
 ```
-<img width="516" height="289" alt="download" src="https://github.com/user-attachments/assets/7a9de37f-8411-49f9-8b98-1e5e8e4b82fc" />
+<img width="516" height="289" alt="download" src="https://github.com/user-attachments/assets/b2679d59-6b73-4a98-bd09-2f1625d259e6" />
 
  
 
@@ -104,8 +104,7 @@ plt.imshow(canny_edges, cmap='gray')
 plt.title('Canny Edge Detection')
 plt.axis('off')
 ```
-<img width="516" height="289" alt="download" src="https://github.com/user-attachments/assets/3f5ff49f-c329-4ff2-aa6f-b8c3417f36f4" />
-
+<img width="516" height="289" alt="download" src="https://github.com/user-attachments/assets/7a9de37f-8411-49f9-8b98-1e5e8e4b82fc" />
 
 
 ###  Canny Edge Detector
@@ -130,7 +129,8 @@ plt.imshow(canny_edges, cmap='gray')
 plt.title('Prewitt Edge Detection')
 plt.axis('off')
 ```
-<img width="516" height="289" alt="download" src="https://github.com/user-attachments/assets/b2679d59-6b73-4a98-bd09-2f1625d259e6" />
+
+<img width="516" height="289" alt="download" src="https://github.com/user-attachments/assets/3f5ff49f-c329-4ff2-aa6f-b8c3417f36f4" />
 
 
 
